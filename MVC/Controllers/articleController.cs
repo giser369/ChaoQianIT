@@ -11,7 +11,7 @@ namespace MVCExercise.Controllers
             switch (type)
             {
                 case 0:
-                    ViewBag.Title = ".NET文章";//
+                    ViewBag.Title = ".NET文章";
                     break;
                 case 1:
                     ViewBag.Title = "Java文章";
