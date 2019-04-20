@@ -1,0 +1,77 @@
+﻿@*<div style="width:50px;height:300px;background-color: #eaeaea;position: relative; float: left;">
+
+</div>*@
+
+<div class="div-artlist">
+
+    @* 标题栏 *@
+    <div style="float: left; width: 620px; height: auto; margin-bottom: 20px; background-color: #eaeaea">
+        <p style="margin: 0 auto; width: 30px; font-weight: 700; color: #6A5ACD">标题</p>
+    </div>
+    <div style="float: right; width: 60px; height: auto; margin-bottom: 20px; background-color: #eaeaea">
+        <p style="font-weight: 700; color: #6A5ACD">发表时间</p>
+    </div>
+
+    @{
+        string sqlNet = string.Format("select * from T_ARTICLE  where ArtType={0} order by ArtDate desc", ViewBag.type);
+        System.Data.DataTable dtResult = Tool.Class.SqlServerOperate.GetDataTable(sqlNet);
+
+        int pageCount = 0;
+        int pageMax = 20;
+        if (dtResult.Rows.Count % pageMax == 0)
+        {
+            pageCount = (int)dtResult.Rows.Count / pageMax;
+        }
+        else
+        {
+            pageCount = (int)dtResult.Rows.Count / pageMax+1;
+        }
+    }
+
+    @* 文章列表 *@
+    @for (int i = (ViewBag.page - 1) * pageMax; i < ViewBag.page * pageMax; i++)
+    {
+        if (i > dtResult.Rows.Count - 1) { break; }
+        <div class="divlistitem">
+            <div class="fl">
+                <div class="divlistitem_head"></div>
+                <a href=@string.Format("{0}.html",dtResult.Rows[i][6].ToString()) target="_blank">@dtResult.Rows[i][2].ToString()</a>
+            </div>
+
+            <div style="float: right;">
+                <p>@string.Format("{0:D}", dtResult.Rows[i][3].ToString())</p>
+            </div>
+            <div class="clr"></div>
+        </div>
+    }
+
+    @* 分页控件 *@
+    <div class="divPager">
+        <ul id="pagination-flickr">
+            <li class="next">
+                @Html.ActionLink("首页", "list", "article", new { type = ViewBag.type, page = 1}, new { target = "_self" })
+            </li>
+            @for (int i = 0; i < pageCount; i++)
+            {
+                if (i + 1 == ViewBag.page)
+                {
+                @Html.GetLi((i + 1).ToString(),new { @class = "active" })
+                }
+                else
+                {
+                <li>@Html.ActionLink((i + 1).ToString(), "list", "article", new { type = ViewBag.type, page = (i + 1) }, new { target = "_self" })</li>
+                }
+            }
+            <li class="next">
+                @Html.ActionLink("尾页", "list", "article", new { type = ViewBag.type, page = pageCount}, new { target = "_self" })
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<div class="div-other">
+    <ul id="treeDemo" class="ztree"></ul>
+</div>
+
+<div class="clr"></div>

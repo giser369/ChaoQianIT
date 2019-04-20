@@ -1,0 +1,83 @@
+﻿html { font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+/*网页体的参数设置*/
+body { font-family: 'Microsoft YaHei'; /*字体：微软雅黑*/ font-size: 14px; line-height: 1.42857143; color: #000; /*background-color: #DADAD2;*/ /*设置网页体的背景颜色，对应的RGB值为218，218，210*/ background-color: #fff; margin: auto; width: 1100px; }
+a { text-decoration: none; }
+
+ul { list-style: none; }
+
+/*导航栏区域*/
+.nav_div { width: 100%; margin: auto; }
+/*导航栏*/
+.nav { width: 100%; margin: auto; }
+/*站点地图区域*/
+.sitemap_div { margin-top: 15px; margin-bottom: 0px; }
+
+.container { margin-right: auto; margin-left: auto; padding-left: 15px; padding-right: 15px; }
+/*.logos
+{
+    height: 42px;
+    background: url(../images/mainlogo.png) no-repeat left center;
+}*/
+
+.container { width: 1100px!important; }
+/*轮播图*/
+.div_lbt { margin-left: 0px; padding: 0; width: 850px; height: 450px; float: left; }
+
+.newarticles { width: 350px; height: 350px; float: right; }
+
+.dashed { /*border-top: 1px dashed gray;
+	height: 0;
+	font-size: 0;
+	margin:0 auto 10 auto;*/ height: 4px; background-color: #D9E3E4; font-size: 0; }
+
+.titlecode { position: relative; width: 100%; padding: 10px 0; font-size: 22px; color: #222222; text-indent: 10px; }
+.titlecode div { position: absolute; left: 0; top: 24px; float: left; width: 4px; height: 16px; font-size: 0; background-color: #EE4B4B; }
+.titlecode a { position: absolute; right: 5px; top: 20px; font-size: 12px; text-decoration: none; color: #c6c6c6; }
+.titlecode a.hide { display: none; }
+.titlecode a:hover { color: #EE4B4B; text-decoration: underline; }
+/*文章列表样式*/
+.listarticle { padding-left: 15px; /*盒子里面的内容距离盒子边框的距离*/ }
+/*热点链接区域*/
+.m_center { width: 1100px; margin-top: 10px; float: left; }
+
+.links { height: 200px; width: 100%; background-color: #fff; float: left; }
+
+.part1 { width: 340px; float: left; }
+
+.part2 { margin-left: 40px; width: 340px; float: left; }
+
+.part3 { margin-left: 40px; width: 340px; float: left; }
+
+.contents { /*background-color:#9999FF;*/ color: #0062C4; font-size: 20px; margin-top: 0px; }
+
+.cat_link { margin-right: 30px; }
+
+.cat_link li { float: left; padding: 5px 0px; width: 20%; }
+
+.cat_link li a { color: #a40000; }
+
+.underline { width: 100%; height: 0px; border-top: 1px solid gray; font-size: 0; margin-top: 0px; }
+
+.listarticle li { }
+
+.listarticle a { line-height: 30px; color: #444444; font-size: 16px; }
+
+.listarticle a:hover { color: Red; }
+
+#show { position: relative; width: 700px; height: 350px; z-index: -1; overflow: hidden; }
+
+#show ul { position: absolute; width: 19999px; display: block; margin: 0px; padding: 0px; height: 350px; overflow: hidden; }
+
+#show ul li { width: 700px; display: block; float: left; height: 350px; overflow: hidden; }
+
+#show .btns { z-index: 10; position: absolute; width: 133px; height: 30px; bottom: 0px; right: 0px; }
+
+#show .btns b i { width: 14px; float: left; height: 14px; cursor: pointer; margin: 0px 6px; border: 0px; background-color: #fff; -webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px; }
+
+#show .btns b i:hover { background: #f08300; }
+
+#show .btns b .on { background: #f08300; }
+
+.footer { width: 1100px; height: 50px; line-height: 50px; margin-top: 40px; margin: 10px 0px 0px 30px; _width: 96%; }
+
+.footer a { padding-left: 40%; color: Black; }

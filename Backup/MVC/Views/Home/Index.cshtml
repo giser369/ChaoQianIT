@@ -1,0 +1,194 @@
+﻿@* 站点导航 *@
+<div id="divmst_SitemapPath" class="safeWidth" @*style="background-color: lightblue"*@>
+</div>
+<div class="div-lbt" id="show">
+</div>
+
+<div class="latestarticle">
+    <div class="dashed"></div>
+    <div class="titlecode">
+        <div></div>
+        最新内容
+    </div>
+
+    @{
+        string sqlSelect = @"select top(1) * from T_ARTICLE where ArtType=0 and ArtDate=(select max(ArtDate) from T_ARTICLE where ArtType=0)
+union all
+select top(1) * from T_ARTICLE where ArtType=1 and ArtDate=(select max(ArtDate) from T_ARTICLE where ArtType=1)
+union all
+select top(1) * from T_ARTICLE where ArtType=2 and ArtDate=(select max(ArtDate) from T_ARTICLE where ArtType=2)
+union all
+select top(1) * from T_ARTICLE where ArtType=3 and ArtDate=(select max(ArtDate) from T_ARTICLE where ArtType=3)
+union all
+select top(1) * from T_ARTICLE where ArtType=4 and ArtDate=(select max(ArtDate) from T_ARTICLE where ArtType=4)";
+        System.Data.DataTable dtNew = Tool.Class.SqlServerOperate.GetDataTable(sqlSelect);
+
+        string sqlNet = @"select top(10) * from T_ARTICLE  where ArtType=0 order by ArtDate desc";
+        System.Data.DataTable dtNet = Tool.Class.SqlServerOperate.GetDataTable(sqlNet);
+
+        string sqlJava = @"select top(10) * from T_ARTICLE  where ArtType=1 order by ArtDate desc";
+        System.Data.DataTable dtJava = Tool.Class.SqlServerOperate.GetDataTable(sqlJava);
+
+        string sqlWeb = @"select top(10) * from T_ARTICLE  where ArtType=2 order by ArtDate desc";
+        System.Data.DataTable dtWeb = Tool.Class.SqlServerOperate.GetDataTable(sqlWeb);
+
+        string sqlDB = @"select top(10) * from T_ARTICLE  where ArtType=3 order by ArtDate desc";
+        System.Data.DataTable dtDB = Tool.Class.SqlServerOperate.GetDataTable(sqlDB);
+
+        string sqlSystem = @"select top(10) * from T_ARTICLE  where ArtType=4 order by ArtDate desc";
+        System.Data.DataTable dtSystem = Tool.Class.SqlServerOperate.GetDataTable(sqlSystem);
+
+        string sqlTool= @"select top(10) * from T_ARTICLE  where ArtType=5 order by ArtDate desc";
+        System.Data.DataTable dtTool= Tool.Class.SqlServerOperate.GetDataTable(sqlTool);
+    }
+
+    @for (int i = 0; i < dtNew.Rows.Count; i++)
+    {
+        <div class="divlistitem">
+            <div style="float: left; width: 100%;">
+                <div class="divlistitem_head"></div>
+                @*@Html.ActionLink(dtNew.Rows[i][2].ToString(), "detail", "article", new { type=(int)dtNew.Rows[i][1],order =(int)dtNew.Rows[i][5] }, new { target = "_blank" })*@
+                <a href=@string.Format("article/{0}.html",dtNew.Rows[i][6].ToString()) target="_blank">@dtNew.Rows[i][2].ToString()</a>
+                <br />
+            </div>
+
+            <div class="clr"></div>
+        </div>
+    }
+
+</div>
+
+<div class="divarticle">
+    <div class="listarticle">
+        <div class="dashed"></div>
+        <div class="titlecode">
+            <div></div>
+            .NET文章 @Html.ActionLink("更多", "list", "article", new { type = 0,page=1 }, new { target = "_blank" })
+        </div>
+
+        @for (int i = 0; i < dtNet.Rows.Count; i++)
+        {
+            <div class="divlistitem">
+                <div style="float: left; width: 100%;">
+                    <div class="divlistitem_head"></div>
+                    @*@Html.ActionLink(dtNet.Rows[i][2].ToString(), "detail", "article", new { type=(int)dtNet.Rows[i][1],order =(int)dtNet.Rows[i][5] }, new { target = "_blank" })*@
+                    <a href=@string.Format("article/{0}.html",dtNet.Rows[i][6].ToString()) target="_blank">@dtNet.Rows[i][2].ToString()</a>
+                    <br />
+                </div>
+
+                <div class="clr"></div>
+            </div> 
+        }
+
+    </div>
+
+    <div class="listarticle">
+        <div class="dashed"></div>
+        <div class="titlecode">
+            <div></div>
+            Java文章 @Html.ActionLink("更多", "list", "article", new { type = 1,page=1}, new { target = "_blank" })
+        </div>
+
+        @for (int i = 0; i <dtJava.Rows.Count; i++)
+        {
+            <div class="divlistitem">
+                <div style="float: left; width: 100%;">
+                    <div class="divlistitem_head"></div>
+                    @*@Html.ActionLink(dtJava.Rows[i][2].ToString(), "detail", "article", new {  type=(int)dtJava.Rows[i][1],order =(int)dtJava.Rows[i][5] }, new { target = "_blank" })*@
+                    <a href=@string.Format("article/{0}.html",dtJava.Rows[i][6].ToString()) target="_blank">@dtJava.Rows[i][2].ToString()</a>
+                    <br />
+                </div>
+
+                <div class="clr"></div>
+            </div> 
+        }
+    </div>
+
+    <div class="listarticle">
+        <div class="dashed"></div>
+        <div class="titlecode">
+            <div></div>
+            Web开发 @Html.ActionLink("更多", "list", "article", new { type = 2,page=1 }, new { target = "_blank" })
+        </div>
+
+        @for (int i = 0; i <dtWeb.Rows.Count; i++)
+        {
+            <div class="divlistitem">
+                <div style="float: left; width: 100%;">
+                    <div class="divlistitem_head"></div>
+                    @*@Html.ActionLink(dtWeb.Rows[i][2].ToString(), "detail", "article", new {  type=(int)dtWeb.Rows[i][1],order =(int)dtWeb.Rows[i][5] }, new { target = "_blank" })*@
+                    <a href=@string.Format("article/{0}.html",dtWeb.Rows[i][6].ToString()) target="_blank">@dtWeb.Rows[i][2].ToString()</a>
+                    <br />
+                </div>
+
+                <div class="clr"></div>
+            </div> 
+        }
+    </div>
+</div>
+
+<div class="divarticle">
+    <div class="listarticle">
+        <div class="dashed"></div>
+        <div class="titlecode">
+            <div></div>
+            数据库 @Html.ActionLink("更多", "list", "article", new { type = 3,page=1 }, new { target = "_blank" })
+        </div>
+        @for (int i = 0; i <dtDB.Rows.Count; i++)
+        {
+            <div class="divlistitem">
+                <div style="float: left; width: 100%;">
+                    <div class="divlistitem_head"></div>
+                    @*@Html.ActionLink(dtDB.Rows[i][2].ToString(), "detail", "article", new {  type=(int)dtDB.Rows[i][1],order =(int)dtDB.Rows[i][5] }, new { target = "_blank" })*@
+                    <a href=@string.Format("article/{0}.html",dtDB.Rows[i][6].ToString()) target="_blank">@dtDB.Rows[i][2].ToString()</a>
+                    <br />
+                </div>
+
+                <div class="clr"></div>
+            </div> 
+        }
+    </div>
+
+    <div class="listarticle">
+        <div class="dashed"></div>
+        <div class="titlecode">
+            <div></div>
+            系统综合 @Html.ActionLink("更多", "list", "article", new { type = 4,page=1}, new { target = "_blank" })
+        </div>
+        @for (int i = 0; i <dtSystem.Rows.Count; i++)
+        {
+            <div class="divlistitem">
+                <div style="float: left; width: 100%;">
+                    <div class="divlistitem_head"></div>
+                    <a href=@string.Format("article/{0}.html",dtSystem.Rows[i][6].ToString()) target="_blank">@dtSystem.Rows[i][2].ToString()</a>
+                    <br />
+                </div>
+
+                <div class="clr"></div>
+            </div> 
+        }
+    </div>
+
+    <div class="listarticle">
+        <div class="dashed"></div>
+        <div class="titlecode">
+            <div></div>
+            在线工具 @Html.ActionLink("更多", "list", "article", new { type = 5,page=1 }, new { target = "_blank" })
+        </div>
+        @for (int i = 0; i < dtTool.Rows.Count; i++)
+        {
+            <div class="divlistitem">
+                <div style="float: left; width: 100%;">
+                    <div class="divlistitem_head"></div>
+                    <a href=@string.Format("article/{0}.html", dtTool.Rows[i][6].ToString()) target="_blank">@dtTool.Rows[i][2].ToString()</a>
+                    <br />
+                </div>
+
+                <div class="clr"></div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="clr"></div>
+

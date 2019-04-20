@@ -1,0 +1,25 @@
+﻿@{
+    string sqlNet = string.Format("select * from T_ARTICLE  where ArtType={0} and ArtOrder={1}",ViewBag.type,ViewBag.order);
+    System.Data.DataTable dtNet = Tool.Class.SqlServerOperate.GetDataTable(sqlNet);
+    ViewBag.Title = dtNet.Rows[0][2].ToString();
+}
+
+<div class="div-artdetail">
+
+    <div class="artdetail">
+        @* 标题栏 *@
+        <h3 class="arttitle">@dtNet.Rows[0][2].ToString()</h3>
+        <p class="artdatetime">发表时间：@dtNet.Rows[0][3].ToString()</p>
+
+        <div class="artcontent cke_show_borders">
+            @Html.Raw(dtNet.Rows[0][4].ToString())
+        </div>
+    </div>
+
+    @* 文章列表 *@
+
+</div>
+
+<div class="div-other"></div>
+
+<div class="clr"></div>

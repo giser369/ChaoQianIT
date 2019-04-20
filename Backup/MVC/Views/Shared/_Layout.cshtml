@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/jquery-1.7.1.js"></script>
+    <script src="~/Scripts/popupdialog/public.js"></script>
+    <script src="~/Scripts/popupdialog/imgviewdialog.js"></script>
+    <script src="~/Scripts/popupdialog/buttondialog.js"></script>
+    <script>
+        $(function () {
+            createPrompt('公告栏', 100, 240); //创建左下角信息提示框
+            createButtonDialog('快捷', 50, 350);
+        });
+    </script>
+</head>
+<body>
+    @*导航栏*@
+    <div id="divmst_LogoNav" class="allWidth">
+        <div id="menu">
+            <ul>
+                <li><a href="http://www.cehui3s.com" class="nodrop">首　页</a></li>
+                <li>@Html.ActionLink(".NET文章", "list", "article", new { type = 0, page = 1 }, new { target = "_blank" })
+                </li>
+                <li>@Html.ActionLink("Java文章", "list", "article", new { type = 1, page = 1 }, new { target = "_blank" })
+                </li>
+                <li>@Html.ActionLink("Web开发", "list", "article", new { type = 2, page = 1 }, new { target = "_blank" })
+                </li>
+                <li>@Html.ActionLink("数据库", "list", "article", new { type = 3, page = 1 }, new { target = "_blank" })
+                </li>
+                <li>@Html.ActionLink("系统综合", "list", "article", new { type = 4, page = 1 }, new { target = "_blank" })
+                <li>@Html.ActionLink("在线工具", "list", "article", new { type =5,page=1 }, new { target = "_blank" })
+            </ul>
+        </div>
+    </div>
+
+    <div class="safeWidth">
+        <div class="divmst_SitemapPath">
+            当前位置：<a href="http://www.cehui3s.com">首页</a>
+            @{
+                if (ViewBag.type == 0)
+                {
+                    if (ViewData.ContainsKey("page"))
+                    {
+                        Write(">.NET文章");
+                    }
+                    else
+                    {
+                        Write(">");
+                @Html.ActionLink(".NET文章", "list", "article", new { type = 0, page = 1 }, new { target = "_blank" })
+                        Write(">正文");
+                    }
+                }
+                if (ViewBag.type == 1)
+                {
+                    if (ViewData.ContainsKey("page"))
+                    {
+                        Write(">Java文章");
+                    }
+                    else
+                    {
+                        Write(">");
+                @Html.ActionLink("Java文章", "list", "article", new { type = 1, page = 1 }, new { target = "_blank" })
+                        Write(">正文");
+                    }
+                }
+                if (ViewBag.type == 2)
+                {
+                    if (ViewData.ContainsKey("page"))
+                    {
+                        Write(">Web开发");
+                    }
+                    else
+                    {
+                        Write(">");
+                @Html.ActionLink("Web开发", "list", "article", new { type = 2, page = 1 }, new { target = "_blank" })
+                        Write(">正文");
+                    }
+                }
+                if (ViewBag.type == 3)
+                {
+                    if (ViewData.ContainsKey("page"))
+                    {
+                        Write(">数据库");
+                    }
+                    else
+                    {
+                        Write(">");
+                @Html.ActionLink("数据库", "list", "article", new { type = 3, page = 1 }, new { target = "_blank" })
+                        Write(">正文");
+                    }
+                }
+                if (ViewBag.type == 4)
+                {
+                    if (ViewData.ContainsKey("page"))
+                    {
+                        Write(">数据库");
+                    }
+                    else
+                    {
+                        Write(">");
+                @Html.ActionLink("数据库", "list", "article", new { type = 4, page = 1 }, new { target = "_blank" })
+                        Write(">正文");
+                    }
+                }
+                if (ViewBag.type == 5)
+                {
+                    if (ViewData.ContainsKey("page"))
+                    {
+                        Write(">在线工具");
+                    }
+                    else
+                    {
+                        Write(">");
+                        @Html.ActionLink("在线工具", "list", "article", new { type = 5, page = 1 }, new { target = "_blank" })
+                        Write(">正文");
+                    }
+                }
+            }
+        </div>
+
+        <div class="search-box" id="j-search">
+            <input class="input-search" type="text" name="kw" maxlength="100" autocomplete="off" value="">
+            <input class="btn-search" type="submit" value="搜索">
+        </div>
+    </div>
+
+    <div class="safeWidth">
+        @RenderBody()
+    </div>
+    @* 页脚 *@
+    <div class="safeWidth">
+        <div class="link-div">
+            <span id="Span1" class="link-text">热点链接</span>
+            <ul class="link-ul">
+                <li><a href="http://jingyan.baidu.com/" target="_blank">百度经验</a></li>
+                <li><a href="http://blog.sina.com.cn/wbjz369"
+                    target="_blank">新浪博客</a></li>
+                <li><a href="http://www.cnblogs.com/" target="_blank">博客园</a></li>
+                <li><a href="http://www.csdn.net/"
+                    target="_blank">CSDN</a></li>
+                <li><a href="http://www.oschina.net/" target="_blank">开源中国</a></li>
+                <li><a href="https://msdn.microsoft.com/zh-cn/default.aspx"
+                    target="_blank">MSDN</a></li>
+                <li><a href="http://www.opengeospatial.org/" target="_blank">开放地理空间信息联盟</a></li>
+                <li>
+                    <a href="http://www.3snews.net/" target="_blank">3SNews</a></li>
+                <li><a href="http://www.supermap.com/cn/" target="_blank">超图官网</a></li>
+                <li><a href="http://www.ev-image.com/"
+                    target="_blank">国遥新天地</a></li>
+                <li><a href="http://www.esrichina-bj.cn/" target="_blank">ESRI官网</a></li>
+                <li><a href="http://www.mapgis.com.cn/"
+                    target="_blank">中地数码</a></li>
+                <li><a href="http://www.geostar.com.cn/" target="_blank">武大吉奥</a></li>
+                <li><a href="http://www.leador.com.cn/index.aspx"
+                    target="_blank">立得空间</a></li>
+                <li><a href="http://www.southsurvey.com/" target="_blank">南方测绘</a></li>
+                <li><a href="http://www.zhdgps.com/"
+                    target="_blank">中海达集团</a></li>
+                <li><a href="http://www.navinfo.com.cn/" target="_blank">四维图新</a></li>
+                <li><a href="http://www.autonavi.com/"
+                    target="_blank">高德导航</a></li>
+                <li><a href="http://www.51zxw.net/" target="_blank">我要自学网</a></li>
+                <li><a href="http://www.w3school.com.cn/index.html"
+                    target="_blank">W3CSchool</a></li>
+                <li><a href="http://www.youku.com/" target="_blank">优酷视频</a></li>
+                <li><a href="http://tv.sohu.com/"
+                    target="_blank">搜狐视频</a></li>
+                <li><a href="http://www.iqiyi.com/" target="_blank">爱奇艺</a></li>
+                <li><a href="http://www.cntv.cn"
+                    target="_blank">CNTV</a></li>
+                <li><a href="http://v.qq.com/" target="_blank">腾讯视频</a></li>
+                <li><a href="http://lbsyun.baidu.com/" target="_blank">百度地图开放平台</a></li>
+                <li><a href="http://lbs.amap.com/" target="_blank">高德地图开放平台</a></li>
+                <li><a href="http://lbs.qq.com/" target="_blank">腾讯地图开放平台</a></li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <a target="_blank" href="http://www.miibeian.gov.cn">版权所有 豫ICP备14024269号</a>
+            <div style="display: inline-block; float: right;">
+                <script type="text/javascript">
+                    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd0d28fa4ecef1322dfeb83a1920dfc38' type='text/javascript'%3E%3C/script%3E"));
+                </script>
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

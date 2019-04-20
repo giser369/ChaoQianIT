@@ -1,0 +1,235 @@
+﻿html
+{
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+/*网页体的参数设置*/
+body
+{
+    font-family: 'Microsoft YaHei'; /*字体：微软雅黑*/
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #000;
+    /*background-color: #DADAD2;*/ /*设置网页体的背景颜色，对应的RGB值为218，218，210*/
+    background-color: #fff;
+    margin: auto;
+    width: 1100px;
+}
+a
+{
+    text-decoration:none;
+}
+
+ul
+{
+    list-style: none;
+}
+
+
+
+/*.logos
+{
+	height: 42px;
+	background: url(../images/mainlogo.png) no-repeat left center;
+}*/
+/*导航栏区域样式*/
+.NavMenuDiv
+{
+    width: 100%;
+    margin: auto;
+}
+/*导航栏样式*/
+.NavMenu
+{
+    width: 100%;
+    margin: auto;
+}
+/*站点导航图区域*/
+.SiteMapPathDiv
+{
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+/*页面主区域样式*/
+.main
+{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+/*文章列表区域*/
+.articlelist
+{
+    float: left;
+    width: 25%;
+    background-color: #f9f9f9;
+    height: auto;
+}
+
+.ArticleListItem li
+{
+    font-family: "微软雅黑";
+    font-size: small;
+    line-height: 25px; /*列表项之间的间距*/
+}
+
+.ArticleListItem a
+{
+    color: Black;
+    text-decoration: none;
+}
+
+    .ArticleListItem a:hover
+    {
+        color: Red;
+    }
+/*.articlelist ul
+  {
+    margin: 8px 10px 14px;
+    padding-left: 10px;
+  }
+.articlelist ul li {
+    height: 35px;
+    overflow: hidden;
+    line-height: 200%;
+    padding: 3px 0px;
+}
+.articlelist ul li a {
+    font-size:15px;
+    font-family:宋体;
+}
+.articlelist ul li i {
+    display: inline-block;
+    width: 13px;
+    height: 10px;
+}*/
+
+/*文章区域*/
+.article
+{
+    float: right;
+    -moz-box-shadow: 0 0 5px #ccc inset;
+    -webkit-box-shadow: 0 0 5px #ccc inset;
+    margin: auto;
+    width: 72%;
+    background-color: #f9f9f9;
+}
+
+.contents
+{
+    /*background-color:#9999FF;*/
+    color: #0062C4;
+    font-size: 20px;
+    margin-top: 0px;
+}
+
+    .contents h2
+    {
+        padding-left: 40%;
+        padding-top: 5px;
+        font-family: 宋体;
+    }
+
+/*文章内容样式*/
+#content
+{
+    width: 90%;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 2em;
+    font-family: "微软雅黑";
+}
+
+    #content p
+    {
+        margin-bottom: 15px;
+    }
+
+h3
+{
+    padding-left: 50%;
+}
+/*文章标题的样式*/
+.articletitle
+{
+    margin-top: 20px;
+    display: block;
+    /*padding-left:43%;*/
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center; /*text-align 属性规定元素中的文本的水平对齐方式。*/
+}
+/*文章发布时间的样式*/
+.publishtime
+{
+    margin-top: 5px;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+}
+
+.underline
+{
+    width: 100%;
+    height: 0px;
+    border-top: 1px solid gray;
+    font-size: 0;
+    margin-top: 0px;
+}
+
+/*热点链接区域*/
+.m_center
+{
+    width: 1100px;
+    margin-top: 10px;
+    float: left;
+}
+
+.links
+{
+    height: 200px;
+    width: 100%;
+    background-color: #fff;
+    float: left;
+}
+
+.cat_link
+{
+    margin-right: 30px;
+}
+
+    .cat_link li
+    {
+        float: left;
+        padding: 5px 0px;
+        width: 20%;
+    }
+
+        .cat_link li a
+        {
+            color: #a40000;
+            text-decoration:none;
+        }
+
+.footer
+{
+    float: left;
+    width: 1100px;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+    .footer a
+    {
+        margin-left: 40%;
+        color: Black;
+        text-decoration: none;
+    }
+
+        .footer a:hover
+        {
+            text-decoration: underline;
+        }

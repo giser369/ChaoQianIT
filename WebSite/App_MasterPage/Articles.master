@@ -1,0 +1,108 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="NavMasterPage.master.cs"
+    Inherits="MasterPages_NavMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+
+    <link href="~/App_Style/Articles.css" rel="stylesheet" type="text/css" />
+
+    <!--母版页头部-->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <!--导航栏-->
+        <div class="NavMenuDiv">
+            <asp:Menu ID="NavMenu" runat="server" Orientation="Horizontal" CssClass="NavMenu"
+                DataSourceID="XmlDataSource1" DisappearAfter="100" BackColor="#0062C4" BorderColor="#3366FF"
+                DynamicHorizontalOffset="1" Font-Names="宋体" Font-Size="Large" ForeColor="White"
+                Height="30px" StaticSubMenuIndent="20px" DynamicEnableDefaultPopOutImage="False">
+                <DataBindings>
+                    <asp:MenuItemBinding DataMember="Item" NavigateUrlField="url" TextField="name" />
+                    <asp:MenuItemBinding DataMember="Option" NavigateUrlField="url" TextField="name" />
+                </DataBindings>
+                <DynamicHoverStyle BackColor="#990000" BorderStyle="None" />
+                <DynamicMenuItemStyle BackColor="#CC3300" HorizontalPadding="5px" VerticalPadding="2px"
+                    Width="120px" />
+                <DynamicMenuStyle BackColor="#FFFBD6" HorizontalPadding="0px" />
+                <DynamicSelectedStyle BackColor="Lime" HorizontalPadding="0px" Width="30px" />
+                <StaticHoverStyle BackColor="#6699FF" ForeColor="White" BorderStyle="None" Height="20px" />
+                <StaticMenuItemStyle HorizontalPadding="50px" VerticalPadding="5px" />
+                <StaticSelectedStyle BackColor="#FFCC66" />
+            </asp:Menu>
+            <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/XMLFile.xml" XPath="/*/*"></asp:XmlDataSource>
+        </div>
+        <!--站点导航-->
+        <div class="SiteMapPathDiv">
+            <asp:Label ID="Label1" runat="server" Text="当前位置：" Font-Size="13px"></asp:Label>
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Size="13px">
+            </asp:SiteMapPath>
+        </div>
+        <!--母版页自定义部分-->
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <!--热点链接-->
+        <div class="m_center">
+            <div class="links">
+                <asp:Label ID="Label9" runat="server" Text="热点链接" CssClass="contents"></asp:Label>
+                <%--<div class="underline"></div>--%>
+                <ul class="cat_link">
+                    <%--<asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/path/22" Target="_blank">HyperLink</asp:HyperLink>--%>
+                    <li><a href="http://jingyan.baidu.com/" target="_blank">百度经验</a></li>
+                    <li><a href="http://blog.sina.com.cn/wbjz369"
+                        target="_blank">新浪博客</a></li>
+                    <li><a href="http://www.cnblogs.com/" target="_blank">博客园</a></li>
+                    <li><a href="http://www.csdn.net/"
+                        target="_blank">CSDN</a></li>
+                    <li><a href="http://www.oschina.net/" target="_blank">开源中国</a></li>
+                    <li><a href="https://msdn.microsoft.com/zh-cn/default.aspx"
+                        target="_blank">MSDN</a></li>
+                    <li><a href="http://www.opengeospatial.org/" target="_blank">开放地理空间信息联盟</a></li>
+                    <li>
+                        <a href="http://www.3snews.net/" target="_blank">3SNews</a></li>
+                    <li><a href="http://www.supermap.com/cn/" target="_blank">超图官网</a></li>
+                    <li><a href="http://www.ev-image.com/"
+                        target="_blank">国遥新天地</a></li>
+                    <li><a href="http://www.esrichina-bj.cn/" target="_blank">ESRI官网</a></li>
+                    <li><a href="http://www.mapgis.com.cn/"
+                        target="_blank">中地数码</a></li>
+                    <li><a href="http://www.geostar.com.cn/" target="_blank">武大吉奥</a></li>
+                    <li><a href="http://www.leador.com.cn/index.aspx"
+                        target="_blank">立得空间</a></li>
+                    <li><a href="http://www.southsurvey.com/" target="_blank">南方测绘</a></li>
+                    <li><a href="http://www.zhdgps.com/"
+                        target="_blank">中海达集团</a></li>
+                    <li><a href="http://www.navinfo.com.cn/" target="_blank">四维图新</a></li>
+                    <li><a href="http://www.autonavi.com/"
+                        target="_blank">高德导航</a></li>
+                    <li><a href="http://www.51zxw.net/" target="_blank">我要自学网</a></li>
+                    <li><a href="http://www.w3school.com.cn/index.html"
+                        target="_blank">W3CSchool</a></li>
+                    <li><a href="http://www.youku.com/" target="_blank">优酷视频</a></li>
+                    <li><a href="http://tv.sohu.com/"
+                        target="_blank">搜狐视频</a></li>
+                    <li><a href="http://www.iqiyi.com/" target="_blank">爱奇艺</a></li>
+                    <li><a href="http://www.cntv.cn"
+                        target="_blank">CNTV</a></li>
+                    <li><a href="http://v.qq.com/" target="_blank">腾讯视频</a></li>
+                </ul>
+                <%--<iframe width='738' height='523' class='preview-iframe' scrolling='no' frameborder='0' src='http://download.csdn.net/source/preview/4910087/3497aa571042978939723927a3eb4941' ></iframe>--%>
+            </div>
+        </div>
+        <div class="footer">
+            <a target="_blank" href="http://www.miibeian.gov.cn">版权所有 豫ICP备14024269号</a>
+            <script type="text/javascript">
+                var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd0d28fa4ecef1322dfeb83a1920dfc38' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+        </div>
+    </form>
+    <script type="text/javascript" src="Scripts/jquery.js"></script>
+    <script type="text/javascript" src="Scripts/slide.js"></script>
+</body>
+</html>

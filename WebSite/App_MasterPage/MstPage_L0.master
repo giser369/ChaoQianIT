@@ -1,0 +1,103 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MstPage_L0.master.cs" Inherits="App_MasterPage_MstPage_L0" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="baidu_union_verify" content="b52c1cf3c5886b20d8a42569cb943750">
+    <title>我爱编程网</title>
+    <link href="../App_Style/Common.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <%-- 网站导航栏 --%>
+        <div id="divmst_LogoNav" class="allWidth">
+            <%-- Menu的外包围盒，利用该包围盒让Menu水平居中 --%>
+            <div style="margin: 0 auto; width: 1050px;">
+                <asp:Menu ID="menu_mainNav" runat="server"
+                    MaximumDynamicDisplayLevels="0" StaticDisplayLevels="2"
+                    Orientation="Horizontal" DataSourceID="SiteMapDataSource1"
+                    OnPreRender="menuPreRender">
+                </asp:Menu>
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+            </div>
+        </div>
+
+        <%-- 站点导航 --%>
+        <div id="divmst_SitemapPath" class="safeWidth">
+            当前位置：<asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
+        </div>
+
+        <%-- 内容部分 --%>
+        <div id="divmst_content" class="safeWidth">
+            <asp:ContentPlaceHolder ID="content" runat="server"></asp:ContentPlaceHolder>
+        </div>
+
+        <%-- 页脚 --%>
+        <div class="safeWidth">
+            <div class="link-div">
+                <%--<asp:Label ID="Label9" runat="server" Text="热点链接" CssClass="link-text"></asp:Label>--%>
+                <span id="Span1" class="link-text">热点链接</span>
+                <ul class="link-ul">
+                    <%--<asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/path/22" Target="_blank">HyperLink</asp:HyperLink>--%>
+                    <li><a href="http://jingyan.baidu.com/" target="_blank">百度经验</a></li>
+                    <li><a href="http://blog.sina.com.cn/wbjz369"
+                        target="_blank">新浪博客</a></li>
+                    <li><a href="http://www.cnblogs.com/" target="_blank">博客园</a></li>
+                    <li><a href="http://www.csdn.net/"
+                        target="_blank">CSDN</a></li>
+                    <li><a href="http://www.oschina.net/" target="_blank">开源中国</a></li>
+                    <li><a href="https://msdn.microsoft.com/zh-cn/default.aspx"
+                        target="_blank">MSDN</a></li>
+                    <li><a href="http://www.opengeospatial.org/" target="_blank">开放地理空间信息联盟</a></li>
+                    <li>
+                        <a href="http://www.3snews.net/" target="_blank">3SNews</a></li>
+                    <li><a href="http://www.supermap.com/cn/" target="_blank">超图官网</a></li>
+                    <li><a href="http://www.ev-image.com/"
+                        target="_blank">国遥新天地</a></li>
+                    <li><a href="http://www.esrichina-bj.cn/" target="_blank">ESRI官网</a></li>
+                    <li><a href="http://www.mapgis.com.cn/"
+                        target="_blank">中地数码</a></li>
+                    <li><a href="http://www.geostar.com.cn/" target="_blank">武大吉奥</a></li>
+                    <li><a href="http://www.leador.com.cn/index.aspx"
+                        target="_blank">立得空间</a></li>
+                    <li><a href="http://www.southsurvey.com/" target="_blank">南方测绘</a></li>
+                    <li><a href="http://www.zhdgps.com/"
+                        target="_blank">中海达集团</a></li>
+                    <li><a href="http://www.navinfo.com.cn/" target="_blank">四维图新</a></li>
+                    <li><a href="http://www.autonavi.com/"
+                        target="_blank">高德导航</a></li>
+                    <li><a href="http://www.51zxw.net/" target="_blank">我要自学网</a></li>
+                    <li><a href="http://www.w3school.com.cn/index.html"
+                        target="_blank">W3CSchool</a></li>
+                    <li><a href="http://www.youku.com/" target="_blank">优酷视频</a></li>
+                    <li><a href="http://tv.sohu.com/"
+                        target="_blank">搜狐视频</a></li>
+                    <li><a href="http://www.iqiyi.com/" target="_blank">爱奇艺</a></li>
+                    <li><a href="http://www.cntv.cn"
+                        target="_blank">CNTV</a></li>
+                    <li><a href="http://v.qq.com/" target="_blank">腾讯视频</a></li>
+                    <li><a href="http://lbsyun.baidu.com/" target="_blank">百度地图开放平台</a></li>
+                    <li><a href="http://lbs.amap.com/" target="_blank">高德地图开放平台</a></li>
+                    <li><a href="http://lbs.qq.com/" target="_blank">腾讯地图开放平台</a></li>
+                </ul>
+            </div>
+
+            <div class="footer">
+                <a target="_blank" href="http://www.miibeian.gov.cn">版权所有 豫ICP备14024269号</a>
+                <div style="display: inline-block; float: right;">
+                    <script type="text/javascript">
+                        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd0d28fa4ecef1322dfeb83a1920dfc38' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+                </div>
+                <script type="text/javascript" src="../App_Script/slide.js"></script>
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>

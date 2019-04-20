@@ -1,0 +1,69 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="NavMasterPage.master.cs"
+    Inherits="MasterPages_NavMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+    <link href="~/App_Style/NavMasterStyle.css" rel="stylesheet" type="text/css" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="logos m_center">
+        <a title="" style="display: block; width: 312px; height: 43px" href=""></a>
+    </div>
+    <!-- end logo -->
+    <div class="NavMenuDiv">
+        <asp:Menu ID="NavMenu" runat="server" Orientation="Horizontal" CssClass="NavMenu"
+            DataSourceID="XmlDataSource1" DisappearAfter="100" BackColor="#0062C4" BorderColor="#3366FF"
+            DynamicHorizontalOffset="1" Font-Names="宋体" Font-Size="Large" ForeColor="White"
+            Height="30px" StaticSubMenuIndent="20px" DynamicEnableDefaultPopOutImage="False">
+            <DataBindings>
+                <asp:MenuItemBinding DataMember="Item" NavigateUrlField="url" TextField="name" />
+                <asp:MenuItemBinding DataMember="Option" NavigateUrlField="url" TextField="name" />
+            </DataBindings>
+            <DynamicHoverStyle BackColor="#990000" BorderStyle="None" />
+            <DynamicMenuItemStyle BackColor="#CC3300" HorizontalPadding="5px" VerticalPadding="2px"
+                Width="120px" />
+            <DynamicMenuStyle BackColor="#FFFBD6" HorizontalPadding="0px" />
+            <DynamicSelectedStyle BackColor="Lime" HorizontalPadding="0px" Width="30px" />
+            <StaticHoverStyle BackColor="#6699FF" ForeColor="White" BorderStyle="None" Height="20px" />
+            <StaticMenuItemStyle HorizontalPadding="50px" VerticalPadding="5px" />
+            <StaticSelectedStyle BackColor="#FFCC66" />
+        </asp:Menu>
+        <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/XMLFile.xml" XPath="/*/*">
+        </asp:XmlDataSource>
+    </div>
+    <div class="SiteMapPathDiv">
+        <asp:Label ID="Label1" runat="server" Text="当前位置：" Font-Size="13px"></asp:Label>
+        <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Size="13px">
+        </asp:SiteMapPath>
+    </div>
+    <!-- 分割线 -->
+    <div class="m_center">
+        <div class="dashed">
+        </div>
+    </div>
+    <!-- end 分割线 -->
+    <div class="links">
+        <asp:Label ID="Label9" runat="server" Text="热点链接" CssClass="contents"></asp:Label>
+        <div class="underline">
+        </div>
+        <%--<iframe width='738' height='523' class='preview-iframe' scrolling='no' frameborder='0' src='http://download.csdn.net/source/preview/4910087/3497aa571042978939723927a3eb4941' ></iframe>--%>
+    </div>
+    <div class="footer">
+        <a target="_blank" href="http://www.miibeian.gov.cn">版权所有 豫ICP备14024269号</a>
+    </div>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+    </form>
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd0d28fa4ecef1322dfeb83a1920dfc38' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

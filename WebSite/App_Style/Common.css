@@ -1,0 +1,106 @@
+﻿/*#region 网页常规元素样式设置 */
+body, div, p, ul, li, h1, h2, h3, h4, h5, h6, table { margin: 0px auto; padding: 0px; font-family: "微软雅黑"; }
+/*网页体的参数设置*/
+body { /*width: 1050px;*/line-height: 1.42857143; color: #000; /*background-color: #DADAD2;*/ /*设置网页体的背景颜色，对应的RGB值为218，218，210*/ background-color: #fff;font-size:14px; }
+
+a { text-decoration: none; }
+
+ul { list-style: none; }
+/*#endregion */
+
+/*#region 通用类 */
+.fl { float: left !important; }
+.fr { float: right !important; }
+/*清除浮动*/
+.clr { clear: both; }
+.al_r { text-align: right; }
+.al_l { text-align: left; }
+
+.safeWidth { margin: 0px auto; width: 1050px;height:20px; }
+.allWidth { height:auto;width:100%;background-color: #0062C4;}
+/*#endregion */
+
+/*#region 母版页 */
+/*主导航 */
+#menu_mainNav * { outline: none;} /*设置ID为menu_mainNav的元素中所有元素的轮廓线*/
+#menu_mainNav a { display: block !important; padding: 8px 10px 8px 10px !important; width: 130px; height: 20px; background-color: #0062C4; text-align: center; color: white; font-size: 15px; }
+#menu_mainNav a:hover, #menu_mainNav a.selected { border-top: 2px solid #FAB41E; background-color: #6699FF; color: white; }
+
+/*站点导航*/
+#divmst_SitemapPath {padding:5px;}
+#divmst_SitemapPath a { color:#6699FF;font-family:"微软雅黑"}
+
+/*热点链接区域*/
+.link-div { float: left; margin-top: 10px; width: 1050px; }
+.link-ul { margin-right: 30px; }
+.link-ul li { float: left; padding: 5px 0px; width: 20%; }
+.link-ul li a { color: #a40000; text-decoration: none; }
+
+.link-text { display: block; background-color: #6699FF; }
+
+/*页脚 */
+.footer { float: left; line-height: 50px; margin-top: 40px; width: 1050px; height: 50px; font-size: 14px; }
+.footer a { margin-left: 35%; color: Black; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+/*#endregion */
+
+/*#region 首页 */
+/*轮播图样式*/
+.div-lbt { float: left; z-index: -1; width: 700px; height: 350px; background-color: #eecece; background-image: url("../App_Image/OSGEarth3.png"); overflow: hidden; }
+.div-lbt ul { float: left; /*position: absolute;*/ display: block; height: 350px; overflow: hidden; }
+.div-lbt ul li { display: block; float: left; width: 700px; height: 350px; overflow: hidden; }
+
+.div-lbt .btns { z-index: 10; position: absolute; width: 133px; height: 30px; bottom: 0px; right: 0px; }
+.div-lbt .btns b i { width: 14px; float: left; height: 14px; cursor: pointer; margin: 0px 6px; border: 0px; background-color: #fff; -webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px; }
+.div-lbt .btns b i:hover { background: #f08300; }
+.div-lbt .btns b .on { background: #f08300; }
+
+/*最新文章区域 */
+.latestarticle { float: right;padding-left:10px;width: 340px; height: 350px;}
+
+.divarticle { float: left; margin-top: 10px; width: 1050px; }
+
+.listarticle { float: left; width: 350px; }
+.listarticle p { margin: 0 auto; width: 300px; color: red; overflow: hidden; overflow-style: auto; }
+
+.dashed { height: 4px; background-color: #D9E3E4; font-size: 0; }
+
+.titlecode { position: relative; width: 100%; padding: 10px 0; font-size: 20px; color: #222222; text-indent: 10px; }
+.titlecode div { position: absolute; left: 0; top: 24px; float: left; width: 4px; height: 16px; font-size: 0; background-color: #EE4B4B; }
+.titlecode a { position: absolute; right: 5px; top: 20px; font-size: 12px; text-decoration: none; color: #c6c6c6; }
+.titlecode a.hide { display: none; }
+.titlecode a:hover { color: #EE4B4B; text-decoration: underline; }
+
+/*列表项*/
+.divlistitem { margin: auto 0px;padding:3px 0px 6px;/*width: 300px;*/ }
+.divlistitem a { display: inline; font-family: 微软雅黑; font-size: 15px; color: #444; letter-spacing: 1px; }
+.divlistitem a:hover { color: red; }
+.divlistitem p { display: inline; padding-right: 0px; font-size: 12px; color: #888; text-align: right; }
+/*列表项头部标识*/
+.divlistitem_head {display:inline-block;vertical-align:middle;margin-right:10px;height:4px;width:4px;background-color:black; }
+/*#endregion */
+
+/*#region 文章列表页 */
+.div-artlist { position: relative; float: left; /*margin-top: 15px;*/ border: 1px solid #D9E3E4; padding: 25px; width: 680px; height:750px; /*background-color: #6A5ACD;*/}
+.div-artdetail {position: relative; float: left; /*margin-top: 15px;*/ border: 1px solid #D9E3E4; padding: 25px; width: 680px; height:auto;min-height:750px; /*background-color: #f5d7d7;*/}
+.div-other { float: right; /*margin-top: 15px;*/ width: 300px; height: 800px; background-color: #D9E3E4; }
+
+/*分页控件的样式*/
+div.divPager { position: absolute; bottom: 0; padding: 10px; /*background-color:#363636*/ }
+.divPager a, .divPager span span { display: block; float: left; padding: 5px 8px 5px 8px; margin-left: 4px; /*color: #ddd;*/ /*background-color: #630*/; border: 1px solid #d88; text-decoration: none; }
+.divPager a:hover { color: white; background-color: #6699FF; }
+.divPager span.pageNow { background-color: #a30; color: white; font-weight: bold; border: 1px solid #ddd; }
+.divPager span span { border: 1px solid gray; color: #999; }
+/*#endregion */
+
+
+/*#region 文章详情页 */
+.artdetail { }
+.artdetail .arttitle { padding: 15px; text-align: center; display: block; font-weight: bold;font-size:22px; }
+.artdetail p.artdatetime {color: gray; text-align: center; line-height: 2em; }
+.artdetail div.artcontent { padding: 10px;}
+
+/*ckeditor下元素样式定义*/
+.cke_show_borders { font-size: 15px; color: #444; line-height: 1.8em; }
+.cke_show_borders p { text-indent: 2em; }
+/*#endregion */

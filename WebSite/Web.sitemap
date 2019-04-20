@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+
+  <siteMapNode url="~/default.aspx" title="网站首页"  description="">
+
+    <siteMapNode url="~/dotnet/" title=".NET文章" description="">
+      <siteMapNode url="~/dotnet/dotnetlist.aspx" title=".NET文章列表" resourceKey="网站首页/.NET文章"/>
+      <siteMapNode url="~/dotnet/dotnetdetail.aspx" title=".NET文章" resourceKey="网站首页/.NET文章"/>
+    </siteMapNode>
+
+    <siteMapNode url="~/java/" title="Java文章"  description="">
+      <siteMapNode url="~/java/javalist.aspx" title="Java文章列表" resourceKey="网站首页/Java文章"/>
+      <siteMapNode url="~/java/javadetail.aspx" title="Java文章" resourceKey="网站首页/Java文章"/>
+    </siteMapNode>
+
+    <siteMapNode url="~/web/" title="Web开发"  description="">
+      <siteMapNode url="~/web/weblist.aspx" title="Web开发列表" resourceKey="网站首页/Web开发"/>
+      <siteMapNode url="~/web/webdetail.aspx" title="Web开发" resourceKey="网站首页/Web开发"/>
+    </siteMapNode>
+
+    <siteMapNode url="~/database/" title="数据库"  description="">
+      <siteMapNode url="~/database/databaselist.aspx" title="数据库列表" resourceKey="网站首页/数据库"/>
+      <siteMapNode url="~/database/databasedetail.aspx" title="数据库" resourceKey="网站首页/数据库"/>
+    </siteMapNode>
+
+    <siteMapNode url="~/system/" title="系统综合"  description="">
+      <siteMapNode url="~/system/systemlist.aspx" title="系统综合列表" resourceKey="网站首页/系统综合"/>
+      <siteMapNode url="~/system/systemdetail.aspx" title="系统综合" resourceKey="网站首页/系统综合"/>
+    </siteMapNode>
+
+    <siteMapNode url="~/tool/" title="在线小工具"  description="">
+      <siteMapNode url="~/tool/toollist.aspx" title="工具列表" resourceKey="网站首页/在线小工具"/>
+      <siteMapNode url="~/tool/mapping/angleconvert.aspx" title="工具" resourceKey="网站首页/在线小工具"/>
+    </siteMapNode>
+  </siteMapNode>
+
+</siteMap>
