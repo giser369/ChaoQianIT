@@ -8,8 +8,6 @@ namespace MVCExercise.Controllers
 {
     public class toolController : Controller
     {
-        //
-        // GET: /tool/
 
         public ActionResult Index(string name)
         {
